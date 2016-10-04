@@ -1,0 +1,78 @@
+09:09:46: examples.while_ut1.ast.Multiplication : No se puede multiplicar con un booleano.14-09-2016 09:41:09: examples.while_ut1.ast.CompareLessOrEqual : No se puede comparar con distintos tipos de variables
+14-09-2016 09:41:09: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:10: examples.while_ut1.ast.Addition : No se puede sumar boolenaos
+14-09-2016 09:41:10: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:10: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:10: examples.while_ut1.ast.Multiplication : No se puede multiplicar con un booleano.
+14-09-2016 09:41:10: examples.while_ut1.ast.Addition : No se puede sumar numeros con otros tipos de variables
+14-09-2016 09:41:10: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:41:10: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:41:10: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:41:10: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:41:10: examples.while_ut1.ast.IfThenElse : Condición de IF no Booleana. Tipo: STRING
+14-09-2016 09:41:10: examples.while_ut1.ast.Addition : No se puede sumar string con otros tipos de variables
+14-09-2016 09:41:10: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:30: examples.while_ut1.ast.CompareLessOrEqual : No se puede comparar con distintos tipos de variables
+14-09-2016 09:41:30: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:30: examples.while_ut1.ast.Addition : No se puede sumar boolenaos
+14-09-2016 09:41:30: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:30: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:41:30: examples.while_ut1.ast.Multiplication : No se puede multiplicar con un booleano.
+14-09-2016 09:41:30: examples.while_ut1.ast.Addition : No se puede sumar numeros con otros tipos de variables
+14-09-2016 09:41:30: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:41:30: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:41:30: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:41:30: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:41:30: examples.while_ut1.ast.IfThenElse : Condición de IF no Booleana. Tipo: STRING
+14-09-2016 09:41:30: examples.while_ut1.ast.Addition : No se puede sumar string con otros tipos de variables
+14-09-2016 09:41:30: examples.while_ut1.ast.Assignment : Variable ya definida. No se puede cambiar el tipo!
+14-09-2016 09:48:03: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:48:03: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:48:19: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:48:19: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:49:19: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:49:19: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:49:41: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:49:41: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:49:53: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:49:53: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:50:51: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:50:51: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:51:18: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:51:18: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:51:45: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:51:45: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:53:23: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:53:23: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:53:43: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:53:43: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:53:59: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:53:59: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:54:11: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:54:11: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:54:30: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:54:30: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:55:16: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:55:16: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 09:58:14: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:58:14: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:58:41: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:58:41: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:59:28: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:59:28: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 09:59:59: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 09:59:59: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 10:00:08: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:00:08: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 10:01:59: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:01:59: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 10:02:14: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:02:14: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 10:04:46: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:04:46: examples.while_ut1.ast.Addition : El compilador no se puede recuperar!
+14-09-2016 10:11:13: examples.while_ut1.ast.Variable : Variable "x" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:11:13: examples.while_ut1.ast.Addition : Operando izquierdo no está definido.
+14-09-2016 10:16:50: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:16:51: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
+14-09-2016 10:20:10: examples.while_ut1.ast.Variable : Variable "y" no definida. ADVERTENCIA: Estados siguientes pueden ser inestables.
+14-09-2016 10:20:10: examples.while_ut1.ast.Multiplication : Operando izquierdo no está definido.
