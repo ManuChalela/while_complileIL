@@ -1,4 +1,4 @@
-package examples.compil2015ut4.parser;
+package compile.il.parser;
 
 import java_cup.runtime.Symbol;
 import java.util.*;
