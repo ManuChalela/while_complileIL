@@ -32,7 +32,12 @@ public class TruthValue extends BExp {
 	}
 
 	@Override public CompilationContextIL compileIL(CompilationContextIL ctx) {
-		throw new Error("Method compileIL not implemented!");
+		if (value == true){
+			ctx.codeIL.append("ldc.i4.1" + "\n");
+		} else if (value == false){
+			ctx.codeIL.append("ldc.i4.0" + "\n");
+		}
+		return ctx;
 	}
 
 	@Override public String toString() {

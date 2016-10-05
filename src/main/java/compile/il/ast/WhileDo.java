@@ -35,7 +35,15 @@ public class WhileDo extends Stmt {
 	}
 
 	@Override public CompilationContextIL compileIL(CompilationContextIL ctx) {
-		throw new Error("Method compileIL not implemented!");
+		String labelTrue = ctx.newLabel();
+		String labelFalse = ctx.newLabel();
+		ctx.codeIL.append(labelTrue + ": nop \n");
+		condition.compileIL(ctx );
+		ctx.codeIL.append("brfalse " + labelFalse + " \n");
+		body.compileIL(ctx);
+		ctx.codeIL.append("br " + labelTrue + " \n");
+		ctx.codeIL.append(labelFalse + ": nop \n");
+		return ctx;
 	}
 
 	@Override public String toString() {

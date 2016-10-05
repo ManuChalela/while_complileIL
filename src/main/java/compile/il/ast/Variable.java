@@ -32,7 +32,10 @@ public class Variable extends AExp {
 	}
 
 	@Override public CompilationContextIL compileIL(CompilationContextIL ctx) {
-		throw new Error("Method compileIL not implemented!");
+		if (id instanceof String){
+			ctx.codeIL.append("ldc." + "\n");
+		}
+		return ctx;
 	}
 
 	@Override public String toString() {
