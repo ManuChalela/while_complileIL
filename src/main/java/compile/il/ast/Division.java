@@ -5,7 +5,7 @@ import compile.il.analyzer.CheckState;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
 
-import java.util.*;
+import java.util.HashMap;
 
 /**
  * Representación de divisiones.
