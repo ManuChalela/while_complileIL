@@ -1,7 +1,6 @@
 package compile.il.ast;
 
 import compile.il.analyzer.CheckState;
-import compile.il.analyzer.CheckState;
 
 import java.util.HashMap;
 
@@ -22,9 +21,9 @@ public abstract class Exp {
     @Override
     public abstract boolean equals(Object obj);
 
-    public abstract Object evaluate(HashMap<String,Object> state)throws RuntimeException;
+    public abstract Object evaluate(HashMap<String, Object> state) throws RuntimeException;
 
-    public abstract  Object check(CheckState state);
+    public abstract Object check(CheckState state);
 
 //	public static Exp generate(Random random, int min, int max) {
 //		final int TERMINAL_COUNT = 2;

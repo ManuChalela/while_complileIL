@@ -3,9 +3,6 @@ package compile.il.ast;
 import compile.il.analyzer.CheckState;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
-import compile.il.analyzer.CheckState;
-import compile.il.analyzer.ObjectState;
-import compile.il.analyzer.Types;
 
 import java.util.HashMap;
 

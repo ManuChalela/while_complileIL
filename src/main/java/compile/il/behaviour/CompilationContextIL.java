@@ -19,6 +19,10 @@ public class CompilationContextIL {
 		this.variables.addAll(variables);
 		this.maxStack = maxStack;
 	}
+
+	public int indexVariables(String identificador) {
+		return variables.indexOf(identificador);
+	}
 	
 	/** Usar este método para obtener un número único de etiqueta a la hora de
 	 *  compilar construcciones que usan saltos.
@@ -39,7 +43,7 @@ public class CompilationContextIL {
 		 * principal, método main e impresión del estado resultante de la 
 		 * ejecución. 
 		 */
-		// prog.compileIL(ctx);
+		prog.compileIL(ctx);
 		return ctx.codeIL.toString(); 
 	}
 }
