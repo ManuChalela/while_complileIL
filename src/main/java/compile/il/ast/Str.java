@@ -1,8 +1,8 @@
 package compile.il.ast;
 
-import compile.il.analyzer.CheckState;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
+import compile.il.behaviour.State;
 
 import java.util.HashMap;
 
@@ -45,7 +45,7 @@ public class Str extends Exp {
         return this.string;
     }
 
-    public Object check(CheckState state) {
+    public Object check(State state) {
         return new ObjectState(Types.STRING, false);
     }
 }

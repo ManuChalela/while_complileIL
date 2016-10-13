@@ -1,9 +1,9 @@
 package compile.il.ast;
 
 import compile.il.Logger;
-import compile.il.analyzer.CheckState;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
+import compile.il.behaviour.State;
 
 import java.util.HashMap;
 
@@ -53,10 +53,9 @@ public class Division extends Exp {
     }
 
     @Override
-    public Object check(CheckState state) {
+    public Object check(State state) {
         Object leftO = this.left.check(state);
         Object rightO = this.right.check(state);
-
 
         if (leftO == null || rightO == null) {
             Logger.log(this.getClass().getName(), "El compilador no se puede recuperar!");
@@ -79,7 +78,7 @@ public class Division extends Exp {
         }
     }
 
-//	public static Division generate(Random random, int min, int max) {
+    //	public static Division generate(Random random, int min, int max) {
 //		AExp left; AExp right;
 //		left = AExp.generate(random, min-1, max-1);
 //		right = AExp.generate(random, min-1, max-1);

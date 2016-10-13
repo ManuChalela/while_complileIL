@@ -75,4 +75,23 @@ public class Multiplication extends AExp {
         right = AExp.generate(random, min - 1, max - 1);
         return new Multiplication(left, right);
     }
+
+    public AExp optimization(State state) {
+        AExp izq = this.left.optimization(state);
+        AExp der = this.right.optimization(state);
+        if (((Numeral) izq).number == 0 || ((Numeral) der).number == 0) {
+            return new Numeral(0.0);
+        }
+        if (izq instanceof Numeral && der instanceof Numeral) {
+            return new Numeral(((Numeral) izq).number * ((Numeral) der).number);
+        } else {
+            if (((Numeral) izq).number == 1) {
+                return der;
+            }
+            if (((Numeral) der).number == 1) {
+                return izq;
+            }
+            return new Multiplication(izq, der);
+        }
+    }
 }

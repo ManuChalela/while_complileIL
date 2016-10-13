@@ -1,6 +1,6 @@
 package compile.il.ast;
 
-import compile.il.analyzer.CheckState;
+import compile.il.behaviour.State;
 
 import java.util.HashMap;
 
@@ -54,8 +54,8 @@ public class Length extends Exp {
 
     }
 
-    public Object check(CheckState state) {
-        return state.getStateHashMap().get(expresion);
+    public Object check(State state) {
+        return state.variables.get(expresion);
     }
 
 }

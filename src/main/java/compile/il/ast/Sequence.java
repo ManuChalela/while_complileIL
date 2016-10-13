@@ -3,6 +3,7 @@ package compile.il.ast;
 import compile.il.behaviour.CompilationContextIL;
 import compile.il.behaviour.State;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Set;
@@ -47,7 +48,7 @@ public class Sequence extends Stmt {
     public CompilationContextIL compileIL(CompilationContextIL ctx) {
         ctx.codeIL.append("nop \n");
         for (Stmt s : statements) {
-            ctx = (CompilationContextIL) s.compileIL(ctx);
+            ctx = s.compileIL(ctx);
         }
         return ctx;
     }
@@ -79,5 +80,17 @@ public class Sequence extends Stmt {
             statements[i] = Stmt.generate(random, min - 1, max - 1);
         }
         return new Sequence(statements);
+    }
+
+    @Override
+    public Stmt optimization(State state) {
+        ArrayList<Stmt> listStmt = new ArrayList<Stmt>();
+        for (int i = 0; i < statements.length; i++) {
+            Stmt s = statements[i].optimization(state);
+            if (!(s instanceof Sequence && (((Sequence) s).statements.length == 0))) {
+                listStmt.add(s);
+            }
+        }
+        return new Sequence((Stmt[]) listStmt.toArray());
     }
 }

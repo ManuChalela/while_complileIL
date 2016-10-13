@@ -18,6 +18,14 @@ public class CompareLessOrEqual extends BExp {
         this.right = right;
     }
 
+    public static CompareLessOrEqual generate(Random random, int min, int max) {
+        AExp left;
+        AExp right;
+        left = AExp.generate(random, min - 1, max - 1);
+        right = AExp.generate(random, min - 1, max - 1);
+        return new CompareLessOrEqual(left, right);
+    }
+
     @Override
     public String unparse() {
         return "(" + left.unparse() + " <= " + right.unparse() + ")";
@@ -70,11 +78,13 @@ public class CompareLessOrEqual extends BExp {
                 && (this.right == null ? other.right == null : this.right.equals(other.right));
     }
 
-    public static CompareLessOrEqual generate(Random random, int min, int max) {
-        AExp left;
-        AExp right;
-        left = AExp.generate(random, min - 1, max - 1);
-        right = AExp.generate(random, min - 1, max - 1);
-        return new CompareLessOrEqual(left, right);
+    @Override
+    public BExp optimization(State state) {
+        AExp e1 = left.optimization(state);
+        AExp e2 = right.optimization(state);
+        if (e1 instanceof Numeral && e2 instanceof Numeral) {
+            return new TruthValue(((Numeral) e1).number <= ((Numeral) e2).number);
+        }
+        return new CompareEqual(e1, e2);
     }
 }

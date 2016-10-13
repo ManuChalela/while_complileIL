@@ -18,6 +18,14 @@ public class Conjunction extends BExp {
         this.right = right;
     }
 
+    public static Conjunction generate(Random random, int min, int max) {
+        BExp left;
+        BExp right;
+        left = BExp.generate(random, min - 1, max - 1);
+        right = BExp.generate(random, min - 1, max - 1);
+        return new Conjunction(left, right);
+    }
+
     @Override
     public String unparse() {
         return "(" + left.unparse() + " and " + right.unparse() + ")";
@@ -73,11 +81,18 @@ public class Conjunction extends BExp {
                 && (this.right == null ? other.right == null : this.right.equals(other.right));
     }
 
-    public static Conjunction generate(Random random, int min, int max) {
-        BExp left;
-        BExp right;
-        left = BExp.generate(random, min - 1, max - 1);
-        right = BExp.generate(random, min - 1, max - 1);
-        return new Conjunction(left, right);
+    @Override
+    public BExp optimization(State state) {
+        BExp e1 = left.optimization(state);
+        BExp e2 = right.optimization(state);
+        if (e1 instanceof TruthValue && e2 instanceof TruthValue) {
+            if (((TruthValue) e1).value == true && ((TruthValue) e2).value == true) {
+                return new TruthValue(true);
+            } else if (((TruthValue) e1).value == false || ((TruthValue) e2).value == false) {
+                return new TruthValue(false);
+            }
+        }
+        return new Conjunction(e1, e2);
     }
+
 }

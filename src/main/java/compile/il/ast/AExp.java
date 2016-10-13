@@ -53,4 +53,8 @@ public abstract class AExp {
                 throw new Error("Unexpected error at AExp.generate()!");
         }
     }
+
+    public AExp optimization(State state) {
+        return this;
+    }
 }

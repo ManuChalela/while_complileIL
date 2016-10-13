@@ -55,6 +55,17 @@ public class Addition extends AExp {
     }
 
     @Override
+    public AExp optimization(State state) {
+        AExp izq = this.left.optimization(state);
+        AExp der = this.right.optimization(state);
+        if (izq instanceof Numeral && der instanceof Numeral) {
+            return new Numeral(((Numeral) izq).number + ((Numeral) der).number);
+        } else {
+            return new Addition(izq, der);
+        }
+    }
+
+    @Override
     public String toString() {
         return "Addition(" + left + ", " + right + ")";
     }
