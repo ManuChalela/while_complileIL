@@ -59,7 +59,14 @@ public class Addition extends AExp {
         AExp izq = this.left.optimization(state);
         AExp der = this.right.optimization(state);
         if (izq instanceof Numeral && der instanceof Numeral) {
-            return new Numeral(((Numeral) izq).number + ((Numeral) der).number);
+            if (((Numeral)izq).number == 0) {
+                return new Numeral(((Numeral)der).number);
+            } else if (((Numeral)der).number == 0) {
+                return new Numeral(((Numeral)izq).number);
+            } else {
+                return new Numeral(((Numeral)izq).number + ((Numeral)der).number);
+            }
+//            return new Numeral(((Numeral) izq).number + ((Numeral) der).number);
         } else {
             return new Addition(izq, der);
         }
