@@ -91,6 +91,12 @@ public class Sequence extends Stmt {
                 listStmt.add(s);
             }
         }
-        return new Sequence((Stmt[]) listStmt.toArray());
+
+        Stmt[] sec = new Stmt [listStmt.size()];
+        for (int i = 0; i<sec.length;i++){
+            sec[i] = listStmt.get(i);
+        }
+        return new Sequence(sec);
+
     }
 }

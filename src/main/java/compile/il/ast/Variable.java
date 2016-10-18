@@ -70,4 +70,12 @@ public class Variable extends AExp {
         Variable other = (Variable) obj;
         return (this.id == null ? other.id == null : this.id.equals(other.id));
     }
+
+    @Override
+    public AExp optimization(State state) {
+        if (state.variables.containsKey(this.id)) {
+            return new Numeral(state.get(id));
+        }
+        return super.optimization(state);
+    }
 }

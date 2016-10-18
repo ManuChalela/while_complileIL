@@ -19,12 +19,13 @@ public class Main {
         State state = new State();
         try {
             Stmt prog = (Stmt) (Parser.parse(source.toString()).value);
+
             System.out.println("// source = \n//\t" +
                     source.toString().replace("\n", "\n//\t"));
             state = prog.evaluate(state);
             System.out.println("// evaluation = " + state);
             System.out.println("Código sin optimizar");
-            System.out.println(CompilationContextIL.compileIL(prog, state));
+            System.out.println(CompilationContextIL.compileIL(prog));
             System.out.println("Código optimizado");
             System.out.println(CompilationContextIL.compileIL(prog, state));
         } catch (Exception err) {
