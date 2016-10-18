@@ -38,6 +38,7 @@ terminal EXCLAMATION_MARK;
 terminal LEFT_PARENTHESIS;
 terminal RIGHT_PARENTHESIS;
 terminal ASTERISK;
+terminal DIV;
 terminal FALSE;
 terminal THEN;
 terminal PLUS_SIGN;
@@ -60,6 +61,7 @@ terminal DOUBLE_EQUALS_SIGN;
 precedence left DOUBLE_AMPERSAND;
 precedence left PLUS_SIGN, HYPHEN_MINUS;
 precedence left ASTERISK;
+precedence left DIV;
 precedence left EXCLAMATION_MARK;
 
 start with stmt;
@@ -83,6 +85,8 @@ aexp ::=
 		{: RESULT = new Variable($1); :}
 	|	aexp:$1 ASTERISK:$2 aexp:$3 
 		{: RESULT = new Multiplication($1, $3); :}
+	|	aexp:$1 DIV:$2 aexp:$3
+    		{: RESULT = new Division($1, $3); :}
 	|	aexp:$1 PLUS_SIGN:$2 aexp:$3 
 		{: RESULT = new Addition($1, $3); :}
 	|	aexp:$1 HYPHEN_MINUS:$2 aexp:$3 

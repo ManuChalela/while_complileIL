@@ -4,17 +4,19 @@ import compile.il.Logger;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
 import compile.il.behaviour.State;
+import java.util.Set;
+import compile.il.behaviour.CompilationContextIL;
 
 import java.util.HashMap;
 
 /**
  * Representación de divisiones.
  */
-public class Division extends Exp {
-    public final Exp left;
-    public final Exp right;
+public class Division extends AExp {
+    public final AExp left;
+    public final AExp right;
 
-    public Division(Exp left, Exp right) {
+    public Division(AExp left, AExp right) {
         this.left = left;
         this.right = right;
     }
@@ -48,10 +50,16 @@ public class Division extends Exp {
 
 
     @Override
-    public Object evaluate(HashMap<String, Object> state) {
+    public Double evaluate(State state) {
         return (Double) left.evaluate(state) / (Double) right.evaluate(state);
     }
 
+    @Override
+    public Set<String> freeVariables(Set<String> vars) {
+        return right.freeVariables(left.freeVariables(vars));
+    }
+
+    /*
     @Override
     public Object check(State state) {
         Object leftO = this.left.check(state);
@@ -77,6 +85,37 @@ public class Division extends Exp {
                 return new ObjectState(Types.NUMERIC, true);
         }
     }
+    */
+    public AExp optimization(State state) {
+        AExp izq = this.left.optimization(state);
+        AExp der = this.right.optimization(state);
+        if (((Numeral) izq).number == 0) {
+            return new Numeral(0.0);
+        }
+        if (izq instanceof Numeral && der instanceof Numeral) {
+            return new Numeral(((Numeral) izq).number / ((Numeral) der).number);
+        } else {
+
+            if (((Numeral) der).number == 1) {
+                return izq;
+            }
+            return new Division(izq, der);
+        }
+    }
+
+    @Override
+    public CompilationContextIL compileIL(CompilationContextIL ctx) {
+        left.compileIL(ctx);
+        right.compileIL(ctx);
+        ctx.codeIL.append("div" + "\n");
+        return ctx;
+    }
+
+    @Override
+    public int maxStackIL() {
+        return Math.max(left.maxStackIL(), right.maxStackIL() + 1);
+    }
+
 
     //	public static Division generate(Random random, int min, int max) {
 //		AExp left; AExp right;

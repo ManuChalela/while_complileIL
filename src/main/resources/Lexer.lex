@@ -50,6 +50,8 @@ import java.io.*;
 	{ return new Symbol(RIGHT_PARENTHESIS, yyline, yycolumn, yytext()); }
 "*"
 	{ return new Symbol(ASTERISK, yyline, yycolumn, yytext()); }
+"/"
+	{ return new Symbol(DIV, yyline, yycolumn, yytext()); }
 "+"
 	{ return new Symbol(PLUS_SIGN, yyline, yycolumn, yytext()); }
 "-"

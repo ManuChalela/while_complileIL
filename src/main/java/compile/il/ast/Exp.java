@@ -25,6 +25,10 @@ public abstract class Exp {
 
     public abstract Object check(State state);
 
+    public Exp optimization(State state) {
+        return this;
+    }
+
 //	public static Exp generate(Random random, int min, int max) {
 //		final int TERMINAL_COUNT = 2;
 //		final int NONTERMINAL_COUNT = 4;
