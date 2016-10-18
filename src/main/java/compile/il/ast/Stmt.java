@@ -51,4 +51,8 @@ public abstract class Stmt {
                 throw new Error("Unexpected error at Stmt.generate()!");
         }
     }
+
+    public Stmt optimization(State state) {
+        return this;
+    }
 }

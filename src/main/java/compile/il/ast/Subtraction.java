@@ -75,4 +75,15 @@ public class Subtraction extends AExp {
         right = AExp.generate(random, min - 1, max - 1);
         return new Subtraction(left, right);
     }
+
+    @Override
+    public AExp optimization(State state) {
+        AExp izq = this.left.optimization(state);
+        AExp der = this.right.optimization(state);
+        if (izq instanceof Numeral && der instanceof Numeral) {
+            return new Numeral(((Numeral) izq).number - ((Numeral) der).number);
+        } else {
+            return new Subtraction(izq, der);
+        }
+    }
 }

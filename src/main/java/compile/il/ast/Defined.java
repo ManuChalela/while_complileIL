@@ -1,8 +1,8 @@
 package compile.il.ast;
 
-import compile.il.analyzer.CheckState;
 import compile.il.analyzer.ObjectState;
 import compile.il.analyzer.Types;
+import compile.il.behaviour.State;
 
 import java.util.HashMap;
 
@@ -51,9 +51,9 @@ public class Defined extends Exp {
         // TODO Auto-generated method stub
     }
 
-    public Object check(CheckState state) {
-        if (state.getStateHashMap().containsKey(var)) {
-            return state.getStateHashMap().get(var);
+    public Object check(State state) {
+        if (state.variables.containsKey(var)) {
+            return state.variables.get(var);
         } else {
             return new ObjectState(Types.STRING, false);
         }

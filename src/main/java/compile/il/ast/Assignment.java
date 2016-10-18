@@ -77,4 +77,17 @@ public class Assignment extends Stmt {
         expression = AExp.generate(random, min - 1, max - 1);
         return new Assignment(id, expression);
     }
+
+    @Override
+    public Stmt optimization(State state) {
+        AExp e = expression.optimization(state);
+        if (e instanceof Numeral) {
+            state.variables.put(id, ((Numeral) e).number);
+        } else {
+            if (state.variables.containsKey(id)) {
+                state.variables.remove(id);
+            }
+        }
+        return new Assignment(id, e);
+    }
 }

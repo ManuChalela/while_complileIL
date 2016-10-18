@@ -53,4 +53,8 @@ public abstract class BExp {
                 throw new Error("Unexpected error at BExp.generate()!");
         }
     }
+
+    public BExp optimization(State state) {
+        return this;
+    }
 }

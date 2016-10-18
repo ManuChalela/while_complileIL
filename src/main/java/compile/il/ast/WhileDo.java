@@ -18,6 +18,14 @@ public class WhileDo extends Stmt {
         this.body = body;
     }
 
+    public static WhileDo generate(Random random, int min, int max) {
+        BExp condition;
+        Stmt body;
+        condition = BExp.generate(random, min - 1, max - 1);
+        body = Stmt.generate(random, min - 1, max - 1);
+        return new WhileDo(condition, body);
+    }
+
     @Override
     public String unparse() {
         return "while " + condition.unparse() + " do { " + body.unparse() + " }";
@@ -75,11 +83,12 @@ public class WhileDo extends Stmt {
                 && (this.body == null ? other.body == null : this.body.equals(other.body));
     }
 
-    public static WhileDo generate(Random random, int min, int max) {
-        BExp condition;
-        Stmt body;
-        condition = BExp.generate(random, min - 1, max - 1);
-        body = Stmt.generate(random, min - 1, max - 1);
-        return new WhileDo(condition, body);
+    @Override
+    public Stmt optimization(State state) {
+        state.variables.clear();
+        BExp conditionOpt = condition.optimization(state);
+        Stmt bodyOpt = body.optimization(state);
+        state.variables.clear();
+        return new WhileDo(conditionOpt, bodyOpt);
     }
 }

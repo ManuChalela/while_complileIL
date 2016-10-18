@@ -16,6 +16,12 @@ public class Negation extends BExp {
         this.condition = condition;
     }
 
+    public static Negation generate(Random random, int min, int max) {
+        BExp condition;
+        condition = BExp.generate(random, min - 1, max - 1);
+        return new Negation(condition);
+    }
+
     @Override
     public String unparse() {
         return "(!" + condition.unparse() + ")";
@@ -63,9 +69,15 @@ public class Negation extends BExp {
         return (this.condition == null ? other.condition == null : this.condition.equals(other.condition));
     }
 
-    public static Negation generate(Random random, int min, int max) {
-        BExp condition;
-        condition = BExp.generate(random, min - 1, max - 1);
-        return new Negation(condition);
+    @Override
+    public BExp optimization(State state) {
+        BExp e1 = condition.optimization(state);
+        if (e1 instanceof TruthValue) {
+            if (((TruthValue) e1).value == Boolean.TRUE) {
+                return new TruthValue(false);
+            }
+            return new TruthValue(true);
+        }
+        return new Negation(e1);
     }
 }

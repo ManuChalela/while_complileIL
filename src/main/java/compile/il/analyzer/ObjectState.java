@@ -28,7 +28,7 @@ public class ObjectState {
         this.initialized = initialized;
     }
 
-    public Boolean isInitialized(){
+    public Boolean isInitialized() {
         return this.initialized;
     }
 }

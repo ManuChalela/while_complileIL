@@ -89,4 +89,21 @@ public class IfThenElse extends Stmt {
         elseBody = Stmt.generate(random, min - 1, max - 1);
         return new IfThenElse(condition, thenBody, elseBody);
     }
+
+    @Override
+    public Stmt optimization(State state) {
+        BExp b = condition.optimization(state);
+        State clone = state.clone();
+
+        Stmt s1 = thenBody.optimization(state);
+        Stmt s2 = elseBody.optimization(clone);
+        state.intesersection(clone);
+        if (b instanceof TruthValue) {
+            if (((TruthValue) b).value == Boolean.TRUE) {
+                return s1;
+            }
+            return s2;
+        }
+        return new IfThenElse(b, s1, s2);
+    }
 }

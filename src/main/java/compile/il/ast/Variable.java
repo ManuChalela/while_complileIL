@@ -16,6 +16,12 @@ public class Variable extends AExp {
         this.id = id;
     }
 
+    public static Variable generate(Random random, int min, int max) {
+        String id;
+        id = "" + "abcdefghijklmnopqrstuvwxyz".charAt(random.nextInt(26));
+        return new Variable(id);
+    }
+
     @Override
     public String unparse() {
         return id;
@@ -63,11 +69,5 @@ public class Variable extends AExp {
         if (obj == null || getClass() != obj.getClass()) return false;
         Variable other = (Variable) obj;
         return (this.id == null ? other.id == null : this.id.equals(other.id));
-    }
-
-    public static Variable generate(Random random, int min, int max) {
-        String id;
-        id = "" + "abcdefghijklmnopqrstuvwxyz".charAt(random.nextInt(26));
-        return new Variable(id);
     }
 }
