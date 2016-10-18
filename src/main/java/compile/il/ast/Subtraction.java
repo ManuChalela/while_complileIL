@@ -81,6 +81,9 @@ public class Subtraction extends AExp {
         AExp izq = this.left.optimization(state);
         AExp der = this.right.optimization(state);
         if (izq instanceof Numeral && der instanceof Numeral) {
+            if (((Numeral)der).number == 0) {
+                return new Numeral(((Numeral)izq).number);
+            }
             return new Numeral(((Numeral) izq).number - ((Numeral) der).number);
         } else {
             return new Subtraction(izq, der);
