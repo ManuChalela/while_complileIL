@@ -55,6 +55,6 @@ public abstract class BExp {
     }
 
     public BExp optimization(State state) {
-        return this;
+        return optimization(state);
     }
 }

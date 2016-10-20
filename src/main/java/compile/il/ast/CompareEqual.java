@@ -81,7 +81,8 @@ public class CompareEqual extends BExp {
         AExp e1 = left.optimization(state);
         AExp e2 = right.optimization(state);
         if (e1 instanceof Numeral && e2 instanceof Numeral) {
-            return new TruthValue(((Numeral) e1).number == ((Numeral) e2).number);
+            boolean b = ((Numeral)e1).number.equals(((Numeral)e2).number);
+            return new TruthValue(b);
         }
         return new CompareEqual(e1, e2);
     }
